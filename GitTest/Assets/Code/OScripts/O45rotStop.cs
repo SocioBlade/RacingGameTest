@@ -5,9 +5,14 @@ using UnityEngine;
 public class O45rotStop : MonoBehaviour {
 
     public Rigidbody pRb;
-    //public Vector3 rotVec;
+    public Vector3 rotVec;
     // Use this for initialization
     public Transform tLook;
+
+    void ResetRot()
+    {
+        
+    }
 
 	void Start ()
     {
@@ -20,15 +25,18 @@ public class O45rotStop : MonoBehaviour {
 	void Update ()
     {
         print(gameObject.transform.rotation.eulerAngles.z);
-        if (gameObject.transform.rotation.eulerAngles.z >= 45)
+        Debug.Log("It's being called?");
+        if (gameObject.transform.rotation.eulerAngles.z >= 90)
         {
-            
+            ResetRot();
+            //gameObject.transform.rotation
         //    print("WHA!?");
         //    transform.Rotate(transform.rotation.x, transform.rotation.y, 45);
         }
         else if (gameObject.transform.rotation.eulerAngles.z <= -90)
         {
-            transform.Rotate(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y, 0f);
+            ResetRot();
+            //transform.Rotate(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y, 0f);
             //    print("WHA!?");
             //    transform.Rotate(transform.rotation.x, transform.rotation.y, 45);
         }
