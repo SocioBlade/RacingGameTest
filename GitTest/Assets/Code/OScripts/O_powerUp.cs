@@ -6,7 +6,7 @@ public class O_powerUp : MonoBehaviour
 {
     public GameObject pickupEffect;
 
-    public float multiplier = 1.4f;
+    public float multiplier = 3f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +22,9 @@ public class O_powerUp : MonoBehaviour
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
         //Apply effect to the player
-        player.transform.localScale *= multiplier;
+        bMoveScript speed = player.GetComponent<bMoveScript>();
+
+        speed.moveSpeed *= multiplier;
 
         //Remove power up object
         Destroy(gameObject);

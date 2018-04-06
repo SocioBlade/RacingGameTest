@@ -11,7 +11,7 @@ public class O45rotStop : MonoBehaviour {
 
     void ResetRot()
     {
-        
+        transform.Rotate(gameObject.transform.rotation.eulerAngles.x, 0f, gameObject.transform.rotation.eulerAngles.z);
     }
 
 	void Start ()
