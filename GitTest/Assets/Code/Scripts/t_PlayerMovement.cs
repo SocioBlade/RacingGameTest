@@ -8,7 +8,8 @@ public class t_PlayerMovement : MonoBehaviour {
 
     public float playerMovement = 700f;
     public float forwardForce = 2000f;
-	
+    public float turnSpeed = 100f;
+
 	// Update is called once per frame
 	void FixedUpdate () {
         // Add a forward force
@@ -21,11 +22,11 @@ public class t_PlayerMovement : MonoBehaviour {
         }
 
         if (Input.GetKey("d")) {
-            rb.AddForce(500 * Time.deltaTime, 0, 0);
+            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey("a")) {
-            rb.AddForce(-500 * Time.deltaTime, 0, 0);
+            transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
         }
 
 	}
