@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class O45rotStop : MonoBehaviour {
 
-    //public Rigidbody pRb;
+    public Rigidbody pRb;
     //public Vector3 rotVec;
     // Use this for initialization
     public Transform tLook;
@@ -22,7 +22,7 @@ public class O45rotStop : MonoBehaviour {
         print(gameObject.transform.rotation.eulerAngles.z);
         if (gameObject.transform.rotation.eulerAngles.z >= 45)
         {
-            transform.Rotate(gameObject.transform.rotation.eulerAngles.x, gameObject.transform.rotation.eulerAngles.y, 45);
+            
         //    print("WHA!?");
         //    transform.Rotate(transform.rotation.x, transform.rotation.y, 45);
         }
